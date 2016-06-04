@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+**  Generic classes
+*/
+
+body {
+  background-color: #333;
+  background-image: url(http://i86.servimg.com/u/f86/17/78/33/57/dark_e11.png);
+  color: #FFF;
+  font-family: 'Raleway';
+}
+
+#global {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#content {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #333;
+}
+
+
+/*
+**  Forum banner
+*/
+
+#banner {
+  width: 100%;
+}
+
+#banner img {
+  max-width: 100%;
+}
