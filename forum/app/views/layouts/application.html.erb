@@ -2,7 +2,7 @@
 <html>
   <!-- HEAD -->
   <head>
-    <title>FER</title>
+    <title>Forum</title>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Cinzel:400,700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -11,14 +11,14 @@
   </head>
   <!-- BODY -->
   <body>
+    <!-- Navbar -->
+    <div id="navbar">
+      <%= link_to "Index", :controller => 'main' %>
+    </div>
     <!-- Global container -->
     <div id="global">
       <!-- Page header -->
-      <a href="/">
-        <div id="banner">
-          <img src="http://image.noelshack.com/fichiers/2016/18/1462202219-banntest06.png"/>
-        </div>
-      </a>
+      <%= link_to image_tag("banner.png", :id => "header"), :controller => 'main' %>
       <!-- Page content -->
       <div id="content">
         <%= yield %>
