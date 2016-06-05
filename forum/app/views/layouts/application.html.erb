@@ -14,11 +14,12 @@
     <!-- Navbar -->
     <div id="navbar">
       <%= link_to "Index", :controller => 'main' %>
+      <%= link_to "Inscription", '/signup' %>
     </div>
     <!-- Global container -->
     <div id="global">
       <!-- Page header -->
-      <%= link_to image_tag("banner.png", :id => "header"), :controller => 'main' %>
+      <%= link_to image_tag("banner.png", :id => "header"), root_path %>
       <!-- Page content -->
       <div id="content">
         <%= yield %>

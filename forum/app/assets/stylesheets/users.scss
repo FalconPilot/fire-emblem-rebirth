@@ -1,0 +1,68 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+**  New user class
+*/
+
+.new_user {
+  width: 300px;;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+/*
+**  Field
+*/
+
+.field {
+  width: 100%;
+}
+
+.label {
+  width: 100%;
+  margin: 4px 0;
+  font-family: 'Cinzel';
+  font-size: 20px;
+  text-align: center;
+}
+
+.field input {
+  width: 100%;
+  padding: 5px 2px;
+  color: #FFF;
+  border-radius: 5px;
+  background-color: #555;
+  border: 1px solid #FFF;
+  box-shadow: 0px 0px 6px #222 inset;
+}
+
+/*
+**  Actions
+*/
+
+.actions {
+  width: 100%;
+}
+
+.actions input {
+  width: 100%;
+  background-color: #333;
+  font-size: 20px;
+  font-family: 'Cinzel';
+  color: #FFF;
+  border: 2px solid #FFF;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.actions input:hover {
+  border: 2px solid #333;
+  cursor: pointer;
+  background-color: #FFF;
+  color: #333;
+  transition: 0.2s;
+}
