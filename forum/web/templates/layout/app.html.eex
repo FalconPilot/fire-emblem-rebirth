@@ -2,12 +2,16 @@
 <html lang="fr">
   <!-- HEAD -->
   <head>
+    <!-- Begin meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Fire emblem RPG forum">
     <meta name="author" content="falconpilot">
-
+    <!-- End meta -->
+    <!-- Begin fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Cinzel:400,700' rel='stylesheet' type='text/css'>
+    <!-- End fonts -->
     <title>FER - Fire Emblem Rebirth</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
@@ -21,7 +25,7 @@
     <div class="main-wrapper">
       <!-- Left sidebar -->
       <div class="sidebar">
-        Pouet
+        <%= render @view_module, "left_bar.html" %>
       </div>
       <!-- Main content -->
       <main role="main" class="contents">
@@ -29,7 +33,7 @@
       </main>
       <!-- Right sidebar -->
       <div class="sidebar">
-        Pouet
+        <%= render @view_module, "right_bar.html" %>
       </div>
     </div>
     <!-- Scripts -->
