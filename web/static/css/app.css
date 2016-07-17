@@ -5,3 +5,11 @@
 :root {
   --bg-color: #333;
 }
+
+/*
+**  Header
+*/
+
+.header-img {
+  max-width: 100%;
+}

@@ -17,7 +17,9 @@
   <body>
     <!-- Header -->
     <header role="header">
-      Hello Mike
+      <a href="/">
+        <img src="/images/banner.png" class="header-img"/>
+      </a>
     </header>
     <!-- Main content -->
     <main role="main">
