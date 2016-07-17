@@ -16,7 +16,9 @@ defmodule FerForum.Router do
   scope "/", FerForum do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get   "/",          PageController, :index
+    get   "/register",  PageController, :register
+    post  "/create",    DataController, :user_create
   end
 
   # Other scopes may use custom stacks.

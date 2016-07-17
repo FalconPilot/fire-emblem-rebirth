@@ -1,0 +1,23 @@
+<div class="pa-frame">
+  <!-- Contexte -->
+  <div class="longblock pa-borders">
+    <%= render "contexte.html" %>
+  </div>
+  <!-- News -->
+  <div class="longblock pa-borders">
+    <%= render "news.html" %>
+  </div>
+  <!-- Prédéfinis -->
+  <div class="predefs">
+    <a href="/" class="pa-borders">
+      <img src="http://image.noelshack.com/fichiers/2016/18/1462602090-oriana-avatar.png"/>
+      <span>Oriana</span>
+    </a>
+  </div>
+  <!-- Partenariats -->
+  <div class="partos pa-borders">
+    <a href="http://fairy-tail-rpg.forumsactifs.net/" target="_blank">
+      <img src="http://image.noelshack.com/fichiers/2016/18/1462651239-fairy-tail-rpg.png"/>
+    </a>
+  </div>
+</div>

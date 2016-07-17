@@ -1,0 +1,16 @@
+<h1 class="main-title">Créer un compte</h1>
+<%= form_for @changeset, "/create", [class: "register-form"],fn f -> %>
+  <label>Pseudo</label>
+  <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;Au moins 3 caractères</p>
+  <%= text_input f, :username %>
+  <label>Adresse mail</label>
+  <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;Doit être valide</p>
+  <%= text_input f, :email %>
+  <label>Mot de passe</label>
+  <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;Au moins 8 caractères</p>
+  <%= password_input f, :password %>
+  <label>Confirmation</label>
+  <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;Doit être identique</p>
+  <%= password_input f, :password_confirm %>
+  <%= submit "Créer le compte", [class: "btn"] %>
+<% end %>

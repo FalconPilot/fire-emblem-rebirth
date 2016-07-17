@@ -9,28 +9,43 @@
     <meta name="author" content="falconpilot">
     <!-- End meta -->
     <title>FER - Fire Emblem Rebirth</title>
+    <script src="https://use.fontawesome.com/aeeeb5e762.js"></script>
     <!-- Begin links -->
     <link href='https://fonts.googleapis.com/css?family=Cinzel:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <!-- End links -->
   </head>
   <!-- BODY -->
   <body>
+    <!-- CSRF Token -->
+    <input type="hidden" id="csrf" value="<%= get_csrf_token() %>">
     <!-- Navbar -->
     <div class="navbar">
       <a href="/">Accueil</a>
+      <%= if is_online?(@conn) do %>
+      <% else %>
+        <a href="/register">Créer un compte</a>
+      <% end %>
     </div>
-    <!-- Header -->
-    <header role="header">
-      <a href="/">
-        <img src="/images/banner.png" class="header-img"/>
-      </a>
-    </header>
-    <!-- Main content -->
-    <main role="main">
-      <%= render @view_module, @view_template, assigns %>
-    </main>
+    <!-- Main wrapper -->
+    <div class="main-wrapper">
+      <!-- Header -->
+      <header role="header">
+        <a href="/">
+          <img src="/images/banner.png" class="header-img"/>
+        </a>
+      </header>
+      <!-- Main content -->
+      <main role="main">
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+      <!-- Footer -->
+      <footer role="footer">
+        <span>© Forum codé par FalconPilot/Taurok/Akando</span>
+      </footer>
+    </div>
     <!-- Scripts -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
