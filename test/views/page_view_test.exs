@@ -1,3 +1,3 @@
-defmodule Forum.PageViewTest do
-  use Forum.ConnCase, async: true
+defmodule FerForum.PageViewTest do
+  use FerForum.ConnCase, async: true
 end

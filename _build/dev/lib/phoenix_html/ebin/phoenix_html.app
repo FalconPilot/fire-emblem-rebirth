@@ -1,7 +1,7 @@
 {application,phoenix_html,
              [{registered,[]},
               {description,"Phoenix.HTML functions for working with HTML strings and templates"},
-              {vsn,"2.6.0"},
+              {vsn,"2.6.2"},
               {modules,['Elixir.Phoenix.HTML','Elixir.Phoenix.HTML.Engine',
                         'Elixir.Phoenix.HTML.Form',
                         'Elixir.Phoenix.HTML.FormData',

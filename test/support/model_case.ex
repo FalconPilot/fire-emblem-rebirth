@@ -1,4 +1,4 @@
-defmodule Forum.ModelCase do
+defmodule FerForum.ModelCase do
   @moduledoc """
   This module defines the test case to be used by
   model tests.
@@ -16,18 +16,18 @@ defmodule Forum.ModelCase do
 
   using do
     quote do
-      alias Forum.Repo
+      alias FerForum.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]
-      import Forum.ModelCase
+      import FerForum.ModelCase
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Forum.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(FerForum.Repo, [])
     end
 
     :ok

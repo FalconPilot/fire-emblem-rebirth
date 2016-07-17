@@ -1,3 +1,3 @@
-defmodule Forum.PageView do
-  use Forum.Web, :view
+defmodule FerForum.PageView do
+  use FerForum.Web, :view
 end

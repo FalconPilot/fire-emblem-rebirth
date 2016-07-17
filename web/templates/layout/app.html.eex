@@ -6,37 +6,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Fire emblem RPG forum">
     <meta name="author" content="falconpilot">
     <!-- End meta -->
-    <!-- Begin fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Cinzel:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
-    <!-- End fonts -->
-    <title>FER - Fire Emblem Rebirth</title>
+    <title>Hello FerForum!</title>
+    <!-- Begin links -->
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <!-- End links -->
   </head>
   <!-- BODY -->
   <body>
-    <!-- Forum header -->
-    <a href="/">
-      <img src="/images/banner.png" class="banner-img"/>
-    </a>
-    <!-- Main wrapper -->
-    <div class="main-wrapper">
-      <!-- Left sidebar -->
-      <div class="sidebar">
-        <%= render @view_module, "left_bar.html" %>
-      </div>
-      <!-- Main content -->
-      <main role="main" class="contents">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
-      <!-- Right sidebar -->
-      <div class="sidebar">
-        <%= render @view_module, "right_bar.html" %>
-      </div>
-    </div>
+    <!-- Main content -->
+    <main role="main">
+      <%= render @view_module, @view_template, assigns %>
+    </main>
     <!-- Scripts -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

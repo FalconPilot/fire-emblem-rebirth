@@ -3,13 +3,13 @@ use Mix.Config
 # In this file, we keep production configuration that
 # you likely want to automate and keep it away from
 # your version control system.
-config :forum, Forum.Endpoint,
-  secret_key_base: "iV6JpgQ4y7cl3QBCC664J9CE6KhyhPT4HyPND1VpVXoXeOJdim5TUXzxtGYtLPX+"
+config :fer_forum, FerForum.Endpoint,
+  secret_key_base: "63YZ/21Quo4VEkikuTFx7UMIc/vRijRBZj1Z5gblWI8xkYFzBI+CyNBRMY2I70wt"
 
 # Configure your database
-config :forum, Forum.Repo,
+config :fer_forum, FerForum.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "forum_prod",
+  database: "fer_forum_prod",
   pool_size: 20

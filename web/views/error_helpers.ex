@@ -1,4 +1,4 @@
-defmodule Forum.ErrorHelpers do
+defmodule FerForum.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -26,10 +26,10 @@ defmodule Forum.ErrorHelpers do
     #
     #     dngettext "errors", "1 file", "%{count} files", count
     #
-    Gettext.dngettext(Forum.Gettext, "errors", msg, msg, opts[:count], opts)
+    Gettext.dngettext(FerForum.Gettext, "errors", msg, msg, opts[:count], opts)
   end
 
   def translate_error(msg) do
-    Gettext.dgettext(Forum.Gettext, "errors", msg)
+    Gettext.dgettext(FerForum.Gettext, "errors", msg)
   end
 end

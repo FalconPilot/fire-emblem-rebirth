@@ -1,3 +1,3 @@
-defmodule Forum.LayoutViewTest do
-  use Forum.ConnCase, async: true
+defmodule FerForum.LayoutViewTest do
+  use FerForum.ConnCase, async: true
 end

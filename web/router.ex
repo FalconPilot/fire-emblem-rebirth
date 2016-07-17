@@ -1,5 +1,5 @@
-defmodule Forum.Router do
-  use Forum.Web, :router
+defmodule FerForum.Router do
+  use FerForum.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule Forum.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Forum do
+  scope "/", FerForum do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Forum do
+  # scope "/api", FerForum do
   #   pipe_through :api
   # end
 end

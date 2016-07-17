@@ -6,12 +6,12 @@
 use Mix.Config
 
 # Configures the endpoint
-config :forum, Forum.Endpoint,
+config :fer_forum, FerForum.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
-  secret_key_base: "+FLsD6rkZy0oH+aDVU93qrmc5mkvb96tTkKvy1sPp6TpJMBgIARBtrkwehRQ7V4+",
+  secret_key_base: "FtFT0cAtNOF6fylEmyDTeyz3TRlRLQWcjcdCl4kf3giSNV9N12RvVWuptYZsI/Hz",
   render_errors: [accepts: ~w(html json)],
-  pubsub: [name: Forum.PubSub,
+  pubsub: [name: FerForum.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

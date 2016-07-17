@@ -1,7 +1,7 @@
 {application,ecto,
              [{registered,[]},
               {description,"Ecto is a domain specific language for writing queries and interacting with databases in Elixir.\n"},
-              {vsn,"1.1.8"},
+              {vsn,"1.1.9"},
               {modules,['Elixir.Ecto','Elixir.Ecto.Adapter',
                         'Elixir.Ecto.Adapter.Migration',
                         'Elixir.Ecto.Adapter.Storage',

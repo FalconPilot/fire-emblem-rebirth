@@ -1,8 +1,8 @@
-defmodule Forum.Mixfile do
+defmodule FerForum.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :forum,
+    [app: :fer_forum,
      version: "0.0.1",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -17,7 +17,7 @@ defmodule Forum.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Forum, []},
+    [mod: {FerForum, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex]]
   end
@@ -36,7 +36,8 @@ defmodule Forum.Mixfile do
      {:phoenix_html, "~> 2.4"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:comeonin, "~> 1.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

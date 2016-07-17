@@ -1,5 +1,19 @@
 # Changelog
 
+## v2.6.2 (2016-07-15)
+
+* Bug fixes
+  * Ensure JavaScript works on Phantom.js
+
+## v2.6.1 (2016-07-08)
+
+* Enhancements
+  * Remove warnings on v1.4
+
+* Bug fixes
+  * Ensure some contents are properly escaped as an integer
+  * Ensure JavaScript data-submit events bubble up until it finds the proper parent
+
 ## v2.6.0 (2016-06-16)
 
 * Enhancements
@@ -11,6 +25,9 @@
 * Client-side changes
   * Use event delegation in `phoenix_html.js`
   * Drop IE8 support on `phoenix_html.js`
+
+* Backwards incompatible changes
+  * `:min`, `:sec` option in `Phoenix.HTML.Form` (`datetime_select/3` and `time_select/3`) are no longer supported. Use `:minute` or `:second` instead.
 
 ## v2.5.1 (2016-03-12)
 

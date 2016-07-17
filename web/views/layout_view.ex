@@ -1,3 +1,3 @@
-defmodule Forum.LayoutView do
-  use Forum.Web, :view
+defmodule FerForum.LayoutView do
+  use FerForum.Web, :view
 end

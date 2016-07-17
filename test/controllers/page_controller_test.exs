@@ -1,5 +1,5 @@
-defmodule Forum.PageControllerTest do
-  use Forum.ConnCase
+defmodule FerForum.PageControllerTest do
+  use FerForum.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

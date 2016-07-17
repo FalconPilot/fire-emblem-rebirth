@@ -1,5 +1,5 @@
-defmodule Forum.ErrorView do
-  use Forum.Web, :view
+defmodule FerForum.ErrorView do
+  use FerForum.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

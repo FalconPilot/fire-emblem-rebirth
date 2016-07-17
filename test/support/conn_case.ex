@@ -1,4 +1,4 @@
-defmodule Forum.ConnCase do
+defmodule FerForum.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,21 +20,21 @@ defmodule Forum.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias Forum.Repo
+      alias FerForum.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import Forum.Router.Helpers
+      import FerForum.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Forum.Endpoint
+      @endpoint FerForum.Endpoint
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Forum.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(FerForum.Repo, [])
     end
 
     {:ok, conn: Phoenix.ConnTest.conn()}
