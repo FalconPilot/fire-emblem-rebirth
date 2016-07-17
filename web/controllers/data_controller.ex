@@ -3,10 +3,7 @@ defmodule FerForum.DataController do
   alias FerForum.User
 
   # Register a new user
-  def user_create(conn, params) do
-    if (params["user"]) do
-      params = params["user"]
-    end
+  def user_create(conn, %{"user" => params}) do
     changeset = User.changeset(%User{}, params)
     case User.create(changeset, FerForum.Repo) do
       {:ok, _changeset} ->
@@ -14,8 +11,9 @@ defmodule FerForum.DataController do
         |> put_flash(:info, "Le compte a été créé avec succès !")
         |> redirect(to: "/")
       {:error, changeset} ->
+        IO.inspect changeset.errors
         conn
-        |> put_flash(:info, "Erreur : certains informations sont invalides !")
+        |> put_flash(:error, "Erreur : certaines informations sont invalides !")
         |> redirect(to: "/register")
     end
   end

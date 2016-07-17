@@ -1,0 +1,10 @@
+<h1 class="main-title"><%= get_profile(@pageuser) %></h1>
+<div class="userpage-wrapper">
+  <!-- Left column -->
+  <div class="user-left">
+    <img src="<%= @pageuser.avatar %>" class="avatar"/>
+  </div>
+  <!-- Right column -->
+  <div class="user-right">
+  </div>
+</div>

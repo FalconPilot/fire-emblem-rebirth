@@ -7,6 +7,10 @@ defmodule FerForum.Repo.Migrations.CreateUser do
       add :encrypted_password, :string
       add :email, :string
       add :privilege, :integer
+      add :avatar, :string
+      add :sheet, :map
+      add :groups, {:array, :integer}
+      add :ranks, {:array, :string}
 
       timestamps
     end

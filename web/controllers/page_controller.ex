@@ -17,4 +17,25 @@ defmodule FerForum.PageController do
     |> assign(:changeset, changeset)
     |> render("register.html")
   end
+
+  # Userlist
+  def userlist(conn, _params) do
+    userlist = Repo.all(User)
+    changeset = User.changeset(%User{})
+    conn
+    |> assign(:userlist, userlist)
+    |> assign(:changeset, changeset)
+    |> render("userlist.html")
+  end
+
+  # Userpage
+  def userpage(conn, %{"id" => uid}) do
+    user = Repo.get_by(User, id: String.to_integer(uid))
+    changeset = User.changeset(%User{})
+    conn
+    |> assign(:pageuser, user)
+    |> assign(:changeset, changeset)
+    |> render("userpage.html")
+  end
+
 end

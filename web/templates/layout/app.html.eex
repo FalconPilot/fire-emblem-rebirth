@@ -24,8 +24,21 @@
     <!-- Navbar -->
     <div class="navbar">
       <a href="/">Accueil</a>
+      <a href="/userlist">Membres</a>
       <%= if is_online?(@conn) do %>
       <% else %>
+        <a href="#" class="login-btn">
+          Connexion
+          <div>
+            <%= form_for @changeset, "/login", [class: "login-form"],fn f -> %>
+              <label>Pseudo</label>
+              <%= text_input f, :username %>
+              <label>Mot de passe</label>
+              <%= password_input f, :password %>
+              <%= submit "Connexion", [class: "btn"] %>
+            <% end %>
+          </div>
+        </a>
         <a href="/register">Créer un compte</a>
       <% end %>
     </div>
@@ -39,11 +52,19 @@
       </header>
       <!-- Main content -->
       <main role="main">
+        <!-- Flash notices -->
+        <%= if flash = get_flash(@conn, :info) do %>
+          <div class="flash info"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;<%= flash %></div>
+        <% end %>
+        <%= if flash = get_flash(@conn, :error) do %>
+          <div class="flash error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;<%= flash %></div>
+        <% end %>
+        <!-- Render main page -->
         <%= render @view_module, @view_template, assigns %>
       </main>
       <!-- Footer -->
       <footer role="footer">
-        <span>© Forum codé par FalconPilot/Taurok/Akando</span>
+        <div>© Forum codé par FalconPilot/Taurok/Akando</div>
       </footer>
     </div>
     <!-- Scripts -->

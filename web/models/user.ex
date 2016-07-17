@@ -8,6 +8,10 @@ defmodule FerForum.User do
     field :encrypted_password, :string
     field :email, :string
     field :privilege, :integer
+    field :avatar, :string
+    field :sheet, :map
+    field :groups, {:array, :integer}
+    field :ranks, {:array, :string}
 
     timestamps
   end
@@ -39,6 +43,10 @@ defmodule FerForum.User do
     password = encrypt_password(changeset.params["password"])
     changeset
     |> Ecto.Changeset.put_change(:encrypted_password, password)
+    |> Ecto.Changeset.put_change(:privilege, 1)
+    |> Ecto.Changeset.put_change(:avatar, "/images/noavatar.png")
+    |> Ecto.Changeset.put_change(:sheet, %{})
+    |> Ecto.Changeset.put_change(:groups, [])
     |> repo.insert()
   end
 

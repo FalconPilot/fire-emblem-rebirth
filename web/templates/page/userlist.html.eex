@@ -1,0 +1,9 @@
+<h1 class="main-title">Liste des membres</h1>
+<div class="userlist-wrapper">
+  <%= for user <- @userlist do %>
+    <div class="user-frame">
+      <img src="<%= user.avatar %>" class="avatar"/>
+      <a href="/user/p<%= user.id %>"><%= user.username %></a>
+    </div>
+  <% end %>
+</div>
