@@ -15,6 +15,9 @@
   </head>
   <!-- BODY -->
   <body>
+    <!-- Navbar -->
+    <div class="navbar">
+    </div>
     <!-- Header -->
     <header role="header">
       <a href="/">

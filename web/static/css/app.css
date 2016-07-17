@@ -7,9 +7,50 @@
 }
 
 /*
+**  Standard classes
+*/
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  background-image: url('/images/background.png');
+  color: #FFF;
+}
+
+main {
+  position: relative;
+  width: 80%;
+  min-height: 40vh;
+  margin: 5px auto;
+  background-color: var(--bg-color);
+  border-radius: 5px;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+}
+
+/*
+**  Navbar
+*/
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: var(--bg-color);
+  box-shadow: 0px 0px 3px #000;
+  z-index: 100;
+}
+
+/*
 **  Header
 */
 
 .header-img {
   max-width: 100%;
+  box-shadow: 0px 0px 6px #000;
 }
