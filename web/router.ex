@@ -22,12 +22,15 @@ defmodule FerForum.Router do
     get   "/userlist",      PageController,     :userlist
     get   "/user/p:id",     PageController,     :userpage
 
+    # Unauthorized paths
+    get   "/pannel",        PageController,    :admin_pannel
+    get   "/pannel/users",  PageController,    :admin_users
+    get   "/pannel/forums", PageController,    :admin_forums
+
     # Post
-    post  "/pannel",        PageController,     :admin_pannel
-    post  "/pannel/users",  PageController,     :admin_users
-    post  "/pannel/forums", PageController,     :admin_forums
     post  "/create",        DataController,     :user_create
     post  "/login",         SessionController,  :login
+    post  "/logout",        SessionController,  :logout
   end
 
   # Other scopes may use custom stacks.

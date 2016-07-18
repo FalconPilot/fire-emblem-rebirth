@@ -40,10 +40,14 @@ defmodule FerForum.PageController do
 
   # Admin pannel
   def admin_pannel(conn, _params) do
-    changeset = User.changeset(%User{})
-    conn
-    |> assign(:changeset, changeset)
-    |> render("admin_hub.html")
+    if (is_allowed?(conn)) do
+      changeset = User.changeset(%User{})
+      conn
+      |> assign(:changeset, changeset)
+      |> render("admin_hub.html")
+    else
+      unauthorized(conn)
+    end
   end
 
   # Admin users
@@ -52,6 +56,28 @@ defmodule FerForum.PageController do
     conn
     |> assign(:changeset, changeset)
     |> render("admin_users.html")
+  end
+
+  # Unauthorized page
+  def unauthorized(conn) do
+    conn
+    |> put_flash(:error, "Erreur : accès refusé")
+    |> redirect(to: "/")
+  end
+
+  # Privilege levels
+  # 0 = member
+  # 1 = admin
+  # 2 = founder
+
+  # Check if access is authorized
+  def is_allowed?(conn) do
+    user = Plug.Conn.get_session(conn, :current_user)
+    if (user) do
+      user.privilege >= 1
+    else
+      false
+    end
   end
 
 end

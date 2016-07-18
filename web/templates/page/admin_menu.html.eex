@@ -1,4 +1,4 @@
 <div class="admin-menu">
-  <%= link("Utilisateurs", to: "/pannel/users", method: "POST") %>
-  <%= link("Forums", to: "/pannel/forums", method: "POST") %>
+  <%= link("Utilisateurs", to: "/pannel/users") %>
+  <%= link("Forums", to: "/pannel/forums") %>
 </div>

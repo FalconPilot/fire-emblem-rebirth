@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="falconpilot">
+    <meta property="og:image" content="http://localhost:4000/images/banner.png">
     <!-- End meta -->
     <title>FER - Fire Emblem Rebirth</title>
     <script src="https://use.fontawesome.com/aeeeb5e762.js"></script>
@@ -26,6 +27,7 @@
       <a href="/">Accueil</a>
       <a href="/userlist">Membres</a>
       <%= if is_online?(@conn) do %>
+        <%= link("Déconnexion", to: "/logout", method: "post") %>
       <% else %>
         <a href="#" class="login-btn">
           Connexion
@@ -42,6 +44,12 @@
         <a href="/register">Créer un compte</a>
       <% end %>
     </div>
+    <!-- Online Tooltip -->
+    <%= if is_online?(@conn) do %>
+    <div class="online-tooltip">
+      Connecté : <span class="group_<%= user_group(@conn) %>"><%= get_username(@conn) %></span>
+    </div>
+    <% end %>
     <!-- Main wrapper -->
     <div class="main-wrapper">
       <!-- Header -->
@@ -62,7 +70,9 @@
         <!-- Render main page -->
         <%= render @view_module, @view_template, assigns %>
         <!-- Admin pannel link -->
-        <%= button("Panneau d'administration", to: "/pannel", class: "btn") %>
+        <%= if is_allowed?(@conn) do %>
+          <%= button("Panneau d'administration", to: "/pannel", class: "btn", method: "get") %>
+        <% end %>
       </main>
       <!-- Footer -->
       <footer role="footer">
