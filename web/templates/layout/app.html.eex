@@ -61,6 +61,8 @@
         <% end %>
         <!-- Render main page -->
         <%= render @view_module, @view_template, assigns %>
+        <!-- Admin pannel link -->
+        <%= button("Panneau d'administration", to: "/pannel", class: "btn") %>
       </main>
       <!-- Footer -->
       <footer role="footer">

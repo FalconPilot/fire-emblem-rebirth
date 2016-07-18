@@ -38,4 +38,20 @@ defmodule FerForum.PageController do
     |> render("userpage.html")
   end
 
+  # Admin pannel
+  def admin_pannel(conn, _params) do
+    changeset = User.changeset(%User{})
+    conn
+    |> assign(:changeset, changeset)
+    |> render("admin_hub.html")
+  end
+
+  # Admin users
+  def admin_users(conn, _params) do
+    changeset = User.changeset(%User{})
+    conn
+    |> assign(:changeset, changeset)
+    |> render("admin_users.html")
+  end
+
 end

@@ -17,14 +17,17 @@ defmodule FerForum.Router do
     pipe_through :browser # Use the default browser stack
 
     # Get
-    get   "/",          PageController,     :index
-    get   "/register",  PageController,     :register
-    get   "/userlist",  PageController,     :userlist
-    get   "/user/p:id",  PageController,     :userpage
+    get   "/",              PageController,     :index
+    get   "/register",      PageController,     :register
+    get   "/userlist",      PageController,     :userlist
+    get   "/user/p:id",     PageController,     :userpage
 
     # Post
-    post  "/create",    DataController,     :user_create
-    post  "/login",     SessionController,  :login
+    post  "/pannel",        PageController,     :admin_pannel
+    post  "/pannel/users",  PageController,     :admin_users
+    post  "/pannel/forums", PageController,     :admin_forums
+    post  "/create",        DataController,     :user_create
+    post  "/login",         SessionController,  :login
   end
 
   # Other scopes may use custom stacks.

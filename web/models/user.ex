@@ -10,7 +10,7 @@ defmodule FerForum.User do
     field :privilege, :integer
     field :avatar, :string
     field :sheet, :map
-    field :groups, {:array, :integer}
+    field :group, :integer
     field :ranks, {:array, :string}
 
     timestamps
@@ -46,7 +46,8 @@ defmodule FerForum.User do
     |> Ecto.Changeset.put_change(:privilege, 1)
     |> Ecto.Changeset.put_change(:avatar, "/images/noavatar.png")
     |> Ecto.Changeset.put_change(:sheet, %{})
-    |> Ecto.Changeset.put_change(:groups, [])
+    |> Ecto.Changeset.put_change(:group, 0)
+    |> Ecto.Changeset.put_change(:ranks, [])
     |> repo.insert()
   end
 

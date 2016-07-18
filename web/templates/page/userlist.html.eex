@@ -3,7 +3,7 @@
   <%= for user <- @userlist do %>
     <div class="user-frame">
       <img src="<%= user.avatar %>" class="avatar"/>
-      <a href="/user/p<%= user.id %>"><%= user.username %></a>
+      <a href="/user/p<%= user.id %>" class="group_<%= user.group %>"><%= user.username %></a>
     </div>
   <% end %>
 </div>

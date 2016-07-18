@@ -9,7 +9,7 @@ defmodule FerForum.Repo.Migrations.CreateUser do
       add :privilege, :integer
       add :avatar, :string
       add :sheet, :map
-      add :groups, {:array, :integer}
+      add :group, :integer
       add :ranks, {:array, :string}
 
       timestamps

@@ -38,6 +38,10 @@ input {
   font-family: 'Open sans';
 }
 
+form {
+  display: flex;
+}
+
 /*
 **  Titles
 */
@@ -169,13 +173,15 @@ footer > div {
 */
 
 .btn {
+  position: relative;
   min-width: 100px;
-  margin: 8px 0;
-  padding: 3px 0;
+  margin: 8px auto;
+  padding: 3px;
   font-size: 13px;
   color: var(--btn-color);
   border: 2px solid var(--btn-color);
   background-color: transparent;
+  border-radius: 5px;
   transition: 0.2s;
 }
 
@@ -385,4 +391,12 @@ footer > div {
 
 .avatar {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+/*
+**  Groups colors
+*/
+
+.group_1 {
+  color: #000;
 }

@@ -1,1 +1,3 @@
 <h1 class="main-title">Panneau d'administration</h1>
+<!-- Main menu -->
+<%= render "admin_menu.html" %>
