@@ -1,6 +1,7 @@
 defmodule FerForum.PageController do
   use FerForum.Web, :controller
   alias FerForum.User
+  alias FerForum.Topic
 
   # Index
   def index(conn, _params) do
@@ -67,8 +68,12 @@ defmodule FerForum.PageController do
   # Admin Forums
   def admin_forums(conn, _params) do
     changeset = User.changeset(%User{})
+    forumset = Topic.changeset(%Topic{})
+    master = Repo.get_by(Topic, parents: [])
     conn
     |> assign(:changeset, changeset)
+    |> assign(:forumset, forumset)
+    |> assign(:master, master)
     |> render("admin_forums.html")
   end
 

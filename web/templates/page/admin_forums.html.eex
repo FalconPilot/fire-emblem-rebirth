@@ -1,3 +1,13 @@
 <h1 class="main-title">Administration des forums</h1>
 <!-- Main menu -->
 <%= render "admin_menu.html" %>
+<!-- Forums list -->
+<%= if @master do %>
+  <%= for topic <- @master do %>
+    <%= topic.name %>
+  <% end %>
+<% end %>
+<!-- Forum menu -->
+<%= form_for @forumset, "/newforum", fn f -> %>
+  <%= submit "Créer forum" %>
+<%= end %>
