@@ -60,10 +60,11 @@
       </header>
       <!-- Main content -->
       <main role="main">
-        <!-- Flash notices -->
+        <!-- Info flash -->
         <%= if flash = get_flash(@conn, :info) do %>
           <div class="flash info"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;<%= flash %></div>
         <% end %>
+        <!-- Error flash -->
         <%= if flash = get_flash(@conn, :error) do %>
           <div class="flash error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;<%= flash %></div>
         <% end %>
@@ -71,12 +72,14 @@
         <%= render @view_module, @view_template, assigns %>
         <!-- Admin pannel link -->
         <%= if is_allowed?(@conn) do %>
-          <%= button("Panneau d'administration", to: "/pannel", class: "btn", method: "get") %>
+          <div class="pannel-btn-wrapper">
+            <%= button("Panneau d'administration", to: "/pannel", class: "btn", method: "get") %>
+          </div>
         <% end %>
       </main>
       <!-- Footer -->
       <footer role="footer">
-        <div>© Forum codé par FalconPilot/Taurok/Akando</div>
+        <div>Ce forum est sous license GPL3. Son code source est en libre accès.</div>
       </footer>
     </div>
     <!-- Scripts -->

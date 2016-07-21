@@ -1,0 +1,3 @@
+<h1 class="main-title">Administration des forums</h1>
+<!-- Main menu -->
+<%= render "admin_menu.html" %>

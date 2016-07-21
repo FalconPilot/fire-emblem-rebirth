@@ -13,9 +13,15 @@ defmodule FerForum.PageController do
   # Registration page
   def register(conn, _params) do
     changeset = User.changeset(%User{})
-    conn
-    |> assign(:changeset, changeset)
-    |> render("register.html")
+    if (get_session(conn, :current_user)) do
+      conn
+      |> put_flash(:error, "Accès refusé !")
+      |> redirect(to: "/")
+    else
+      conn
+      |> assign(:changeset, changeset)
+      |> render("register.html")
+    end
   end
 
   # Userlist
@@ -56,6 +62,14 @@ defmodule FerForum.PageController do
     conn
     |> assign(:changeset, changeset)
     |> render("admin_users.html")
+  end
+
+  # Admin Forums
+  def admin_forums(conn, _params) do
+    changeset = User.changeset(%User{})
+    conn
+    |> assign(:changeset, changeset)
+    |> render("admin_forums.html")
   end
 
   # Unauthorized page

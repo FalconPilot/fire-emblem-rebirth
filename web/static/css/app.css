@@ -342,6 +342,11 @@ footer > div {
 **  Admin pannel classes
 */
 
+.pannel-btn-wrapper {
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 5px #111;
+}
+
 .admin-menu {
   width: 20%;
   padding: 3px;
