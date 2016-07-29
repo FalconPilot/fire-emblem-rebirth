@@ -3,11 +3,54 @@ defmodule FerForum.PageController do
   alias FerForum.User
   alias FerForum.Topic
 
+  # Get subtopics
+  def get_subtopics([]) do
+    []
+  end
+
+  def get_subtopics(list) do
+    get_subtopics(list, [])
+  end
+
+  def get_subtopics([h|t], acc) do
+    topic = Repo.get!(Topic, h)
+    acc = acc ++ [topic]
+    get_subtopics(t, acc)
+  end
+
+  def get_subtopics([], acc) do
+    acc
+  end
+
+  # Get subtopics list
+
+  def get_list([]) do
+    []
+  end
+
+  def get_list(list) do
+    get_list(list, [])
+  end
+
+  def get_list([h|t], acc) do
+    acc = acc ++ get_subtopics(h.subtopics)
+    get_list(t, acc)
+  end
+
+  def get_list([], acc) do
+    acc
+  end
+
   # Index
   def index(conn, _params) do
     changeset = User.changeset(%User{})
+    master = listconv(Repo.get_by(Topic, parent: 0))
+    sublist = get_list(master)
+    IO.inspect(sublist)
     conn
     |> assign(:changeset, changeset)
+    |> assign(:master, master)
+    |> assign(:sublist, sublist)
     |> render("index.html")
   end
 
@@ -69,12 +112,25 @@ defmodule FerForum.PageController do
   def admin_forums(conn, _params) do
     changeset = User.changeset(%User{})
     forumset = Topic.changeset(%Topic{})
-    master = Repo.get_by(Topic, parents: [])
+    master = listconv(Repo.get_by(Topic, parent: 0))
     conn
     |> assign(:changeset, changeset)
     |> assign(:forumset, forumset)
     |> assign(:master, master)
     |> render("admin_forums.html")
+  end
+
+  # Convert to list
+  def listconv(nil) do
+    nil
+  end
+
+  def listconv([elem]) do
+    [elem]
+  end
+
+  def listconv(elem) do
+    [elem]
   end
 
   # Unauthorized page

@@ -1,13 +1,29 @@
 <h1 class="main-title">Administration des forums</h1>
-<!-- Main menu -->
-<%= render "admin_menu.html" %>
-<!-- Forums list -->
-<%= if @master do %>
-  <%= for topic <- @master do %>
-    <%= topic.name %>
-  <% end %>
-<% end %>
-<!-- Forum menu -->
-<%= form_for @forumset, "/newforum", fn f -> %>
-  <%= submit "Créer forum" %>
-<%= end %>
+<div class="pannel-wrapper">
+  <!-- Main menu -->
+  <%= render "admin_menu.html" %>
+  <div class="pannel-subwrapper">
+    <!-- Forums list -->
+    <%= if @master do %>
+      <%= for topic <- @master do %>
+        <%= topic.name %>
+        <!-- Subtopics -->
+        <%= for subtopic <- topic.subtopics do %>
+          <%= subtopic %>
+        <% end %>
+        <!-- Create subforum -->
+        <%= form_for @forumset, "/newforum", [class: "newforum_form"], fn f -> %>
+          <%= hidden_input(f, :parent, value: topic.id) %>
+          <%= text_input(f, :name) %>
+          <%= submit "Créer forum" %>
+        <%= end %>
+      <% end %>
+    <% end %>
+    <h2 class="sub-title">Créer une catégorie</h2>
+    <!-- Create category -->
+    <%= form_for @forumset, "/newforum", [class: "newforum_form"], fn f -> %>
+      <%= text_input(f, :name) %>
+      <%= submit "Créer forum" %>
+    <%= end %>
+  </div>
+</div>

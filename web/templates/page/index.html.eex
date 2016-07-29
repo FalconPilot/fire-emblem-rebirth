@@ -1,2 +1,12 @@
 <h1 class="main-title"><%= welcome_message(@conn) %></h1>
 <%= render "pa.html" %>
+<%= for topic <- @master do %>
+  <div class="cat-wrapper">
+    <h2 class="sub-title"><%= topic.name %></h2>
+    <%= for forum <- @sublist do %>
+      <div class="forum-wrapper">
+        <%= forum.name %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

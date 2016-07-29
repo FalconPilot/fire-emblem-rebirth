@@ -5,7 +5,7 @@ defmodule FerForum.Repo.Migrations.CreateTopic do
     create table(:topics) do
       add :name, :string
       add :subtopics, {:array, :integer}
-      add :parents, {:array, :integer}
+      add :parent, :integer
       add :messages, {:array, :integer}
 
       timestamps

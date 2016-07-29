@@ -5,11 +5,12 @@ defmodule FerForum.Message do
     field :author, :integer
     field :title, :string
     field :posts, {:array, :integer}
+    field :type, :integer
 
     timestamps
   end
 
-  @required_fields ~w(author title contents)
+  @required_fields ~w(author title contents type)
   @optional_fields ~w()
 
   @doc """

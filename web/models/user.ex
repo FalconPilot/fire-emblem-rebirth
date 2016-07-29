@@ -43,7 +43,7 @@ defmodule FerForum.User do
     password = encrypt_password(changeset.params["password"])
     changeset
     |> Ecto.Changeset.put_change(:encrypted_password, password)
-    |> Ecto.Changeset.put_change(:privilege, 0)
+    |> Ecto.Changeset.put_change(:privilege, 2)
     |> Ecto.Changeset.put_change(:avatar, "/images/noavatar.png")
     |> Ecto.Changeset.put_change(:sheet, %{})
     |> Ecto.Changeset.put_change(:group, 0)

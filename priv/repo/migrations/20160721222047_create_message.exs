@@ -6,6 +6,7 @@ defmodule FerForum.Repo.Migrations.CreateMessage do
       add :author, :integer
       add :title, :string
       add :contents, :string
+      add :type, :integer
 
       timestamps
     end

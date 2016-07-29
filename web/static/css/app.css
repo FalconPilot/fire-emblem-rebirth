@@ -40,6 +40,7 @@ input {
 
 form {
   display: flex;
+  flex-direction: column;
 }
 
 /*
@@ -56,6 +57,16 @@ form {
   text-shadow: 0px 0px 2px #FFF;
   background-color: rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 4px #000;
+}
+
+.sub-title {
+  width: 100%;
+  margin: 5px auto;
+  text-align: center;
+  font-family: 'Cinzel';
+  font-weight: normal;
+  color: #FC6;
+  text-shadow: 0px 0px 2px #FC0;
 }
 
 /*
@@ -339,6 +350,24 @@ footer > div {
 }
 
 /*
+**  Topic classes
+*/
+
+.cat-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 5px auto;
+
+}
+
+.topic-wrapper {
+  position: relative;
+  width: 80%;
+  margin: 5px auto;
+  text-align: center;
+}
+
+/*
 **  Admin pannel classes
 */
 
@@ -366,6 +395,24 @@ footer > div {
 
 .admin-menu > form > a:hover {
   padding-left: 12px;
+}
+
+.pannel-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.pannel-subwrapper {
+  padding: 6px 0;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.newforum_form > input {
+  margin: 5px;
 }
 
 /*

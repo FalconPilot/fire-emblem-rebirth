@@ -3,14 +3,14 @@ defmodule FerForum.Topic do
 
   schema "topics" do
     field :name, :string
+    field :parent, :integer
     field :subtopics, {:array, :integer}
-    field :parents, {:array, :integer}
     field :messages, {:array, :integer}
 
     timestamps
   end
 
-  @required_fields ~w(name subtopics messages)
+  @required_fields ~w(name subtopics parent messages)
   @optional_fields ~w()
 
   @doc """
@@ -22,5 +22,11 @@ defmodule FerForum.Topic do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+  end
+
+  # Create entry
+  def create(changeset, repo) do
+    changeset
+    |> repo.insert()
   end
 end

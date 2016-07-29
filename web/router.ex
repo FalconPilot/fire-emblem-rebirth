@@ -28,6 +28,7 @@ defmodule FerForum.Router do
     get   "/pannel/forums", PageController,    :admin_forums
 
     # Post
+    post  "/newforum",      DataController,     :forum_create
     post  "/create",        DataController,     :user_create
     post  "/login",         SessionController,  :login
     post  "/logout",        SessionController,  :logout
